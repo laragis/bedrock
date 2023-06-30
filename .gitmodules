@@ -1,0 +1,4 @@
+[submodule "web/app/themes/astra-child"]
+	path = web/app/themes/astra-child
+	url = https://github.com/laragis/astra-child.git
+	branch = vntts
