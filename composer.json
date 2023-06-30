@@ -40,11 +40,14 @@
     "roots/wordpress": "6.2.2",
     "roots/wp-config": "1.0.0",
     "roots/wp-password-bcrypt": "1.1.0",
-    "wpackagist-theme/twentytwentythree": "^1.0"
+    "wpackagist-theme/twentytwentythree": "^1.0",
+    "roots/multisite-url-fixer": "^1.1",
+    "roots/acorn": "^3.2"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.7.1",
-    "roave/security-advisories": "dev-latest"
+    "roave/security-advisories": "dev-latest",
+    "spatie/laravel-ignition": "^1.6"
   },
   "config": {
     "optimize-autoloader": true,
@@ -67,6 +70,9 @@
   "scripts": {
     "post-root-package-install": [
       "php -r \"copy('.env.example', '.env');\""
+    ],
+    "post-autoload-dump": [
+      "Roots\\Acorn\\ComposerScripts::postAutoloadDump"
     ],
     "test": [
       "phpcs"
